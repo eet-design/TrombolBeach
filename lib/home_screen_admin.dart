@@ -1,5 +1,24 @@
 import 'package:flutter/material.dart';
 
+void main() {
+  runApp(const MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+      ),
+      home: const HomeScreen(),
+    );
+  }
+}
+
+// --- HomeScreen ---
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
 
@@ -11,6 +30,8 @@ class HomeScreen extends StatelessWidget {
         backgroundColor: Colors.transparent,
         elevation: 0,
         centerTitle: true,
+        // Optionally add a title if needed
+        // title: Text('Trombol Beach', style: TextStyle(color: Colors.white)),
       ),
       body: Container(
         decoration: const BoxDecoration(
@@ -25,7 +46,7 @@ class HomeScreen extends StatelessWidget {
         ),
         child: SingleChildScrollView(
           child: Padding(
-            padding: const EdgeInsets.all(16.0),
+            padding: const EdgeInsets.only(top: kToolbarHeight + 20, left: 16.0, right: 16.0, bottom: 16.0), // Adjust top padding for transparent AppBar
             child: Column(
               children: [
                 ClipRRect(
@@ -35,7 +56,7 @@ class HomeScreen extends StatelessWidget {
                     fit: BoxFit.cover,
                   ),
                 ),
-                const SizedBox(height: 16),
+                const SizedBox(height: 18),
                 Row(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -78,7 +99,10 @@ class HomeScreen extends StatelessWidget {
                     children: [
                       const Text(
                         'Activities 🎉',
-                        style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 20,
+                        ),
                       ),
                       const SizedBox(height: 10),
                       ListTile(
@@ -122,7 +146,7 @@ class HomeScreen extends StatelessWidget {
                         child: Column(
                           children: const [
                             Text(
-                              'Open\n7.00am - Closed\n7.00pm',
+                              'Open 7.00am\n - \nClosed 7.00pm',
                               style: TextStyle(fontSize: 16),
                               textAlign: TextAlign.center,
                             ),
@@ -133,8 +157,8 @@ class HomeScreen extends StatelessWidget {
                       Expanded(
                         child: ClipRRect(
                           borderRadius: BorderRadius.circular(10),
-                          child: Image.network(
-                            'https://www.gstatic.com/flutter-onestack-prototype/genui/example_1.jpg',
+                          child: Image.asset(
+                            'assets/location.jpg',
                             fit: BoxFit.cover,
                           ),
                         ),
@@ -154,12 +178,11 @@ class HomeScreen extends StatelessWidget {
         items: const [
           BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
           BottomNavigationBarItem(icon: Icon(Icons.person), label: 'Profile'),
-            // onPressed: () {
-            //     Navigator.push(
-            // context,
-            // MaterialPageRoute(builder: (context) => const ProfileScreen()),),
           BottomNavigationBarItem(icon: Icon(Icons.map), label: 'Map'),
-          BottomNavigationBarItem(icon: Icon(Icons.shopping_cart), label: 'Cart'),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.shopping_cart),
+            label: 'Cart',
+          ),
         ],
       ),
     );
