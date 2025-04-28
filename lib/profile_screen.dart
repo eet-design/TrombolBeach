@@ -1,18 +1,36 @@
 import 'package:flutter/material.dart';
 
+void main() {
+  runApp(const MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+      ),
+      home: const ProfileScreen(),
+    );
+  }
+}
+
 class ProfileScreen extends StatelessWidget {
   const ProfileScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xFFF7E6D3), // Background color like your design
+      backgroundColor: const Color(0xFFF7E6D3), // Background color like your design
       body: SingleChildScrollView(
         child: Column(
           children: [
             Container(
-              padding: EdgeInsets.only(top: 80),
-              decoration: BoxDecoration(
+              padding: const EdgeInsets.only(top: 80),
+              decoration: const BoxDecoration(
                 gradient: LinearGradient(
                   colors: [Color(0xFF8DB4E2), Color(0xFFF7E6D3)],
                   begin: Alignment.topCenter,
@@ -28,19 +46,19 @@ class ProfileScreen extends StatelessWidget {
                   CircleAvatar(
                     radius: 50,
                     backgroundColor: Colors.grey[400],
-                    child: Icon(Icons.person, size: 50, color: Colors.black54),
+                    child: const Icon(Icons.person, size: 50, color: Colors.black54),
                   ),
-                  SizedBox(height: 20),
+                  const SizedBox(height: 20),
                   Container(
-                    margin: EdgeInsets.symmetric(horizontal: 30),
-                    padding: EdgeInsets.all(16),
+                    margin: const EdgeInsets.symmetric(horizontal: 30),
+                    padding: const EdgeInsets.all(16),
                     decoration: BoxDecoration(
                       color: Colors.white,
                       borderRadius: BorderRadius.circular(20),
                     ),
                     child: Row(
                       children: [
-                        Expanded(
+                        const Expanded(
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
@@ -55,51 +73,51 @@ class ProfileScreen extends StatelessWidget {
                             ],
                           ),
                         ),
-                        Icon(Icons.edit, color: Colors.black),
+                        const Icon(Icons.edit, color: Colors.black),
                       ],
                     ),
                   ),
-                  SizedBox(height: 30),
+                  const SizedBox(height: 30),
                 ],
               ),
             ),
-            SizedBox(height: 30),
+            const SizedBox(height: 30),
             ElevatedButton.icon(
               onPressed: () {},
-              icon: Icon(Icons.headset_mic),
-              label: Text("Contact Us"),
+              icon: const Icon(Icons.headset_mic),
+              label: const Text("Contact Us"),
               style: ElevatedButton.styleFrom(
                 backgroundColor: Colors.white,
                 foregroundColor: Colors.black,
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(30)),
-                padding: EdgeInsets.symmetric(horizontal: 40, vertical: 15),
+                padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 15),
               ),
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             ElevatedButton.icon(
               onPressed: () {},
-              icon: Icon(Icons.calendar_today),
-              label: Text("Bookings"),
+              icon: const Icon(Icons.calendar_today),
+              label: const Text("Bookings"),
               style: ElevatedButton.styleFrom(
                 backgroundColor: Colors.white,
                 foregroundColor: Colors.black,
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(30)),
-                padding: EdgeInsets.symmetric(horizontal: 50, vertical: 15),
+                padding: const EdgeInsets.symmetric(horizontal: 50, vertical: 15),
               ),
             ),
-            SizedBox(height: 20), // Added SizedBox for spacing
+            const SizedBox(height: 20), // Added SizedBox for spacing
             TextButton.icon(
               onPressed: () {},
-              icon: Icon(Icons.logout, color: Colors.red),
-              label: Text(
+              icon: const Icon(Icons.logout, color: Colors.red),
+              label: const Text(
                 "Log Out",
                 style: TextStyle(
                     color: Colors.red, fontWeight: FontWeight.bold),
               ),
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
           ],
         ),
       ),
@@ -117,3 +135,5 @@ class ProfileScreen extends StatelessWidget {
     );
   }
 }
+
+
