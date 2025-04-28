@@ -61,6 +61,16 @@ flutter:
    assets:
      - assets/logo.png
      - assets/backgroundtb.jpg
+     - assets/horse.png
+     - assets/horsejoy.jpg
+     - assets/karaoke.png
+     - assets/maingate.jpg
+     - assets/pesta.png
+     - assets/photo.jpg
+     - assets/photo_2025-04-25_11-12-10.jpg
+     - assets/photobooth.jpg
+     - assets/photobooth.png
+     - assets/trombolbeach.jpg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images
